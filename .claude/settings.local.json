@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(npm install:*)",
+      "Bash(if [ ! -f .env.local ])",
+      "Bash(then echo \"Creating .env.local\")",
+      "Bash(else echo \".env.local exists\")",
+      "Bash(fi)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

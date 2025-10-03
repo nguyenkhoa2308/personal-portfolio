@@ -5,15 +5,17 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 const experiences = [
   {
     title: "Frontend Developer Intern",
-    company: "CÔNG TY TNHH TRUYỀN THÔNG VÀ GIẢI PHÁP SỐ HAGENCY VIỆT NAMABC",
-    location: "Hà Nội, Việt Nam",
-    period: "7/2025 - Hiện tại",
+    company: "HAGENCY VIETNAM DIGITAL MEDIA & SOLUTIONS CO., LTD",
+    location: "Hanoi, Vietnam",
+    period: "7/2025 - Present",
     description:
-      "Thực tập sinh Frontend Developer, hỗ trợ team phát triển giao diện web sử dụng Next.js và Tailwind CSS. Học hỏi quy trình làm việc chuyên nghiệp và best practices.",
+      "Joined the team as a Frontend Developer Intern, contributing to real-world projects while mastering modern web development technologies and industry-standard practices.",
     achievements: [
-      "Tham gia phát triển và hoàn thiện nhiều phần giao diện cho website của công ty.",
-      "Hoàn thành các task về UI components và tối ưu hiển thị trên nhiều thiết bị.",
-      "Học và áp dụng Git workflow, tham gia code review để nâng cao chất lượng code.",
+      "Developed and optimized responsive web applications using Next.js, TypeScript, and Tailwind CSS, ensuring seamless performance across devices.",
+      "Implemented modern UI components and reusable design patterns to maintain consistency and improve development speed.",
+      "Collaborated with the team using Git for version control and task management.",
+      "Explored and applied AI-powered tools to enhance productivity, debugging, and code quality.",
+      "Gained hands-on experience in professional workflows and best practices.",
     ],
   },
 ];
@@ -52,7 +54,7 @@ export function ExperienceSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            KINH NGHIỆM
+            EXPERIENCE
           </motion.h2>
           <motion.p
             className="text-xl text-muted-foreground max-w-2xl"
@@ -60,8 +62,7 @@ export function ExperienceSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Hành trình phát triển sự nghiệp với những dự án và thành tựu đáng
-            nhớ
+            My career journey with memorable projects and achievements
           </motion.p>
         </motion.div>
 
@@ -117,7 +118,7 @@ export function ExperienceSection() {
                 </p>
 
                 <div className="space-y-2">
-                  <h4 className="text-foreground">Thành tựu chính:</h4>
+                  <h4 className="text-foreground">Key Achievements:</h4>
                   <ul className="space-y-1">
                     {exp.achievements.map((achievement, i) => (
                       <li

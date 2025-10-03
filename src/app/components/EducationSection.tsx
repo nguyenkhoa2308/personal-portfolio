@@ -4,14 +4,16 @@ import { GraduationCap, Calendar, MapPin } from "lucide-react";
 
 const education = [
   {
-    degree: "Cử nhân Kỹ thuật Phần mềm",
-    school: "Đại học Công Nghiệp Hà Nội",
-    location: "Hà Nội, Việt Nam",
+    degree: "Bachelor of Software Engineering",
+    school: "Hanoi University of Industry",
+    location: "Hanoi, Vietnam",
     period: "2021 - 2025",
     gpa: "3.43/4.0",
     description:
-      "Tốt nghiệp ngành Kỹ thuật Phần mềm, được trang bị nền tảng vững chắc về phát triển phần mềm, cơ sở dữ liệu và công nghệ web hiện đại. Định hướng sự nghiệp trở thành Frontend Developer chuyên nghiệp.",
-    achievements: ["Nhận học bổng học kỳ 8 nhờ thành tích học tập xuất sắc"],
+      "Built a strong foundation in software development, databases, algorithms, and modern web technologies. Specialized in Frontend Development with focus on creating responsive and user-friendly web applications.",
+    achievements: [
+      "Received scholarship for semester 8 due to outstanding academic performance",
+    ],
   },
 ];
 
@@ -49,7 +51,7 @@ export function EducationSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            HỌC VẤN
+            EDUCATION
           </motion.h2>
           <motion.p
             className="text-xl text-muted-foreground max-w-2xl"
@@ -57,7 +59,7 @@ export function EducationSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Nền tảng học thuật vững chắc trong lĩnh vực công nghệ thông tin
+            Strong academic foundation in information technology
           </motion.p>
         </motion.div>
 
@@ -106,7 +108,7 @@ export function EducationSection() {
 
                   <div>
                     <h5 className="text-foreground mb-2">
-                      Thành tích nổi bật:
+                      Notable Achievements:
                     </h5>
                     <ul className="space-y-1">
                       {edu.achievements.map((achievement, i) => (

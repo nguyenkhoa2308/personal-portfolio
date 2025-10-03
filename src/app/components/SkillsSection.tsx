@@ -1,4 +1,5 @@
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 const skillCategories = [
@@ -9,53 +10,84 @@ const skillCategories = [
         name: "JavaScript",
         color: "text-yellow-400",
         bgColor: "bg-yellow-400/20",
+        logo: "/images/js.png",
       },
-      { name: "TypeScript", color: "text-blue-400", bgColor: "bg-blue-400/20" },
-      { name: "React", color: "text-cyan-400", bgColor: "bg-cyan-400/20" },
-      { name: "Next.Js", color: "text-white", bgColor: "bg-white/20" },
-      { name: "Redux", color: "text-purple-400", bgColor: "bg-purple-400/20" },
+
+      {
+        name: "TypeScript",
+        color: "text-blue-400",
+        bgColor: "bg-blue-400/20",
+        logo: "/images/ts.png",
+      },
+      {
+        name: "React",
+        color: "text-cyan-400",
+        bgColor: "bg-cyan-400/20",
+        logo: "/images/react.png",
+      },
+      {
+        name: "Next.Js",
+        color: "text-white",
+        bgColor: "bg-white/20",
+        logo: "/images/nextjs.png",
+      },
       {
         name: "Tailwind CSS",
         color: "text-cyan-300",
         bgColor: "bg-cyan-300/20",
+        logo: "/images/tailwind.png",
       },
-      { name: "GSAP", color: "text-green-400", bgColor: "bg-green-400/20" },
-      {
-        name: "Framer Motion",
-        color: "text-pink-400",
-        bgColor: "bg-pink-400/20",
-      },
-      { name: "Sass", color: "text-pink-500", bgColor: "bg-pink-500/20" },
       {
         name: "Bootstrap",
         color: "text-purple-500",
         bgColor: "bg-purple-500/20",
+        logo: "/logos/bootstrap.svg",
       },
     ],
   },
   {
     title: "BACKEND",
     skills: [
-      { name: "Node.Js", color: "text-green-500", bgColor: "bg-green-500/20" },
-      { name: "NestJS", color: "text-red-500", bgColor: "bg-red-500/20" },
-      { name: "Express.Js", color: "text-gray-400", bgColor: "bg-gray-400/20" },
+      {
+        name: "Node.Js",
+        color: "text-green-500",
+        bgColor: "bg-green-500/20",
+        logo: "/images/node.png",
+      },
+      {
+        name: "Express.Js",
+        color: "text-gray-400",
+        bgColor: "bg-gray-400/20",
+        logo: "/images/ex.png",
+      },
     ],
   },
   {
     title: "DATABASE",
     skills: [
-      { name: "MySQL", color: "text-blue-500", bgColor: "bg-blue-500/20" },
-      { name: "PostgreSQL", color: "text-blue-600", bgColor: "bg-blue-600/20" },
-      { name: "MongoDB", color: "text-green-600", bgColor: "bg-green-600/20" },
-      { name: "Prisma", color: "text-white", bgColor: "bg-white/20" },
+      {
+        name: "SQL Server",
+        color: "text-blue-500",
+        bgColor: "bg-blue-500/20",
+        logo: "/images/sqlserver.png",
+      },
+      {
+        name: "MongoDB",
+        color: "text-green-600",
+        bgColor: "bg-green-600/20",
+        logo: "/logos/mongodb.svg",
+      },
     ],
   },
   {
     title: "TOOLS",
     skills: [
-      { name: "Git", color: "text-red-400", bgColor: "bg-red-400/20" },
-      { name: "Docker", color: "text-blue-400", bgColor: "bg-blue-400/20" },
-      { name: "AWS", color: "text-orange-400", bgColor: "bg-orange-400/20" },
+      {
+        name: "Git",
+        color: "text-red-400",
+        bgColor: "bg-red-400/20",
+        logo: "/images/git.png",
+      },
     ],
   },
 ];
@@ -82,7 +114,7 @@ export function SkillsSection() {
             <div className="w-3 h-3 bg-background rounded-full" />
           </motion.div>
           <h2 className="text-2xl font-bold text-muted-foreground tracking-widest">
-            KỸ NĂNG CỦA TÔI
+            MY SKILLS
           </h2>
         </motion.div>
 
@@ -123,14 +155,23 @@ export function SkillsSection() {
                       whileTap={{ scale: 0.95 }}
                       className={`flex items-center gap-3 px-4 py-3 rounded-lg border border-border/50 ${skill.bgColor} backdrop-blur-sm hover:border-primary/50 transition-all duration-300 cursor-pointer group`}
                     >
-                      <motion.div
+                      {/* <motion.div
                         className={`w-3 h-3 rounded-full ${skill.color.replace(
                           "text-",
                           "bg-"
                         )}`}
                         whileHover={{ scale: 1.5 }}
                         transition={{ duration: 0.2 }}
-                      />
+                      /> */}
+                      <div>
+                        <Image
+                          src={skill.logo}
+                          width={40}
+                          height={40}
+                          alt={`Logo ${skill.name}`}
+                          className="max-h-10"
+                        />
+                      </div>
                       <span
                         className={`font-medium ${skill.color} group-hover:text-foreground transition-colors duration-300`}
                       >

@@ -16,9 +16,9 @@ export function AboutSection() {
           className="max-w-6xl mb-32"
         >
           <h2 className="text-4xl lg:text-6xl leading-tight text-foreground mb-8">
-            Tôi luôn nỗ lực học hỏi và áp dụng những công nghệ mới nhất để tạo
-            ra các giao diện web hiện đại, đẹp mắt và tối ưu cho trải nghiệm
-            người dùng.
+            Driven by curiosity and creativity, I embrace the latest
+            technologies to craft modern, elegant, and user-focused web
+            experiences.
           </h2>
         </motion.div>
 
@@ -46,7 +46,7 @@ export function AboutSection() {
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Đây là tôi.
+              This is me.
             </motion.p>
             <motion.h3
               className="text-3xl lg:text-4xl font-bold text-foreground mb-8"
@@ -54,7 +54,7 @@ export function AboutSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Xin chào, tôi là Nguyễn Đức Khoa.
+              Hello, I&apos;m Nguyen Duc Khoa.
             </motion.h3>
           </motion.div>
 
@@ -71,10 +71,12 @@ export function AboutSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.9 }}
             >
-              Tôi là một Fresher Frontend Developer với niềm đam mê xây dựng
-              giao diện web đẹp mắt và thân thiện với người dùng. Dù mới bắt đầu
-              sự nghiệp, tôi luôn cố gắng học hỏi và cập nhật những công nghệ
-              mới nhất.
+              I’m passionate about frontend development and enjoy turning ideas
+              into clean, responsive, and interactive web applications. Although
+              I’m still at the beginning of my career, I keep pushing myself to
+              learn every day—whether it’s mastering frameworks like Next.js and
+              React, improving my TypeScript skills, or practicing better UI/UX
+              design with Tailwind CSS.
             </motion.p>
 
             <motion.p
@@ -83,11 +85,13 @@ export function AboutSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 1.1 }}
             >
-              Tôi đã tự học và thực hành qua nhiều dự án cá nhân, từ việc xây
-              dựng landing page đến các ứng dụng web có tính tương tác. Mục tiêu
-              của tôi là trở thành một Frontend Developer giỏi, có thể đóng góp
-              vào các dự án thực tế và mang lại giá trị thiết thực cho người
-              dùng.
+              I’ve been self-learning and practicing through many personal
+              projects, from simple landing pages to small interactive
+              applications. These projects not only help me sharpen my coding
+              skills but also give me valuable experience in problem-solving,
+              debugging, and thinking like a developer. My goal is to grow into
+              a skilled Frontend Developer who can contribute to real-world
+              projects and deliver meaningful value to users.
             </motion.p>
           </motion.div>
         </div>

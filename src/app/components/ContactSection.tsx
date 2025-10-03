@@ -1,27 +1,52 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Facebook } from "lucide-react";
 
 export function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
+
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
       value: "ngkhoa.dev@gmail.com",
       link: "mailto:ngkhoa.dev@gmail.com",
+      description: "Send me an email anytime!"
     },
     {
       icon: Phone,
-      title: "Điện thoại",
+      title: "Phone",
       value: "+84 964 896 098",
       link: "tel:+84964896098",
+      description: "Available Mon-Fri, 9AM-6PM"
     },
     {
       icon: MapPin,
-      title: "Địa chỉ",
-      value: "Hà Nội, Việt Nam",
+      title: "Location",
+      value: "Hanoi, Vietnam",
+      description: "Based in Vietnam's capital"
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: Github,
+      name: "GitHub",
+      link: "https://github.com/nguyenkhoa2308",
+      color: "hover:text-[#333] dark:hover:text-white"
+    },
+    {
+      icon: Linkedin,
+      name: "LinkedIn",
+      link: "https://linkedin.com/in/yourprofile",
+      color: "hover:text-[#0A66C2]"
+    },
+    {
+      icon: Facebook,
+      name: "Facebook",
+      link: "https://facebook.com/yourprofile",
+      color: "hover:text-[#1877F2]"
     },
   ];
 
@@ -55,7 +80,7 @@ export function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            LIÊN HỆ
+            CONTACT
           </motion.h2>
           <motion.p
             className="text-xl text-muted-foreground max-w-2xl"
@@ -63,122 +88,81 @@ export function ContactSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Hãy cùng thảo luận về dự án tiếp theo của bạn. Tôi luôn sẵn sàng
-            lắng nghe và tư vấn.
+            Let&apos;s discuss your next project. I&apos;m always ready to
+            listen and provide consultation.
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
+        <div className="max-w-5xl mx-auto">
+          {/* Introduction */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="text-center mb-16"
           >
-            <div>
-              <h3 className="text-2xl text-foreground mb-6">
-                Thông tin liên hệ
-              </h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Tôi luôn mở cửa để thảo luận về các cơ hội hợp tác mới, chia sẻ
-                ý tưởng hoặc đơn giản là trò chuyện về công nghệ.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.a
-                  key={info.title}
-                  href={info?.link}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{ duration: 0.1 }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                    <info.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-foreground group-hover:text-primary transition-colors duration-300">
-                      {info.title}
-                    </h4>
-                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                      {info.value}
-                    </p>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              I&apos;m always open to discussing new collaboration opportunities,
+              sharing ideas, or simply chatting about technology. Feel free to reach out!
+            </p>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {contactInfo.map((info, index) => (
+              <motion.a
+                key={index}
+                href={info?.link}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="block p-8 bg-card rounded-xl border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group text-center"
+              >
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-2xl flex items-center justify-center group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300">
+                  <info.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h4 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                  {info.title}
+                </h4>
+                <p className="text-sm text-muted-foreground mb-2">
+                  {info.description}
+                </p>
+                <p className="text-foreground font-medium group-hover:text-primary transition-colors duration-300">
+                  {info.value}
+                </p>
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Social Links */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-center"
           >
-            <div className="p-8 bg-card border-border">
-              <h3 className="text-2xl text-foreground mb-6">Gửi tin nhắn</h3>
-
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
-                      Họ tên
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Nhập họ tên của bạn"
-                      className="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-input-background border-border text-foreground placeholder-muted-foreground focus:border-primary focus:ring-primary/20"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-muted-foreground mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="Nhập email của bạn"
-                      className="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-input-background border-border text-foreground placeholder-muted-foreground focus:border-primary focus:ring-primary/20"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm text-muted-foreground mb-2">
-                    Chủ đề
-                  </label>
-                  <input
-                    placeholder="Chủ đề tin nhắn"
-                    className="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-input-background border-border text-foreground placeholder-muted-foreground focus:border-primary focus:ring-primary/20"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm text-muted-foreground mb-2">
-                    Tin nhắn
-                  </label>
-                  <textarea
-                    placeholder="Nội dung tin nhắn của bạn..."
-                    rows={6}
-                    className="placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border px-3 py-2 text-base transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-input-background border-border text-foreground placeholder-muted-foreground focus:border-primary focus:ring-primary/20 resize-none"
-                  />
-                </div>
-
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+            <h3 className="text-2xl font-semibold text-foreground mb-6">
+              Connect With Me
+            </h3>
+            <div className="flex justify-center gap-4">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`w-14 h-14 bg-card border border-border rounded-xl flex items-center justify-center text-muted-foreground transition-all duration-300 ${social.color} hover:border-current hover:shadow-lg`}
+                  title={social.name}
                 >
-                  <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10 rounded-md px-6 has-[>svg]:px-4 w-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 group">
-                    <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
-                    Gửi tin nhắn
-                  </button>
-                </motion.div>
-              </form>
+                  <social.icon className="w-6 h-6" />
+                </motion.a>
+              ))}
             </div>
           </motion.div>
         </div>

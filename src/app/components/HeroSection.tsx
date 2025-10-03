@@ -78,13 +78,14 @@ export function HeroSection() {
                 }}
               >
                 <p className="mb-2">
-                  Xin chào, tôi là{" "}
+                  Hi, I&apos;m{" "}
                   <span className="text-primary font-semibold">
-                    Nguyễn Đức Khoa
+                    Nguyen Duc Khoa
                   </span>
-                  , một Frontend Developer mới vào nghề với niềm đam mê xây dựng
-                  các giao diện web hiện đại, responsive và thân thiện với người
-                  dùng.
+                  , a passionate Frontend Developer dedicated to crafting
+                  modern, responsive, and user-centric web experiences. I
+                  transform creative ideas into elegant digital solutions that
+                  users love.
                 </p>
               </motion.div>
 
@@ -176,7 +177,7 @@ export function HeroSection() {
                   className="inline-flex items-center rounded-xl gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 text-lg tracking-wider hover:scale-105 transition-all duration-300"
                 >
                   <Download className="w-5 h-5" />
-                  TẢI CV
+                  DOWNLOAD CV
                 </motion.a>
               </motion.div>
             </motion.div>
@@ -223,7 +224,7 @@ export function HeroSection() {
               >
                 {/* Animated blob shape */}
                 <motion.div
-                  className="w-80 h-96 relative overflow-hidden bg-gradient-to-br from-primary/5 to-card/10 backdrop-blur-sm"
+                  className="w-[24rem] h-[30rem] relative overflow-hidden bg-gradient-to-br from-primary/5 to-card/10 backdrop-blur-sm"
                   style={{
                     borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
                     border: "3px solid rgba(0, 255, 136, 0.3)",
@@ -267,11 +268,11 @@ export function HeroSection() {
                   >
                     {/* Profile Image */}
                     <Image
-                      src="https://images.unsplash.com/photo-1653732212701-b729f0b08330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDF8fHx8MTc1NzM5ODIzNnww&ixlib=rb-4.1.0&q=80&w=1080"
-                      alt="Minh Tuấn - Frontend Developer"
-                      width={320}
-                      height={384}
-                      className="w-full h-full object-cover object-center transform -rotate-12 scale-125"
+                      src={"/images/khoa-avatar.jpg"}
+                      alt="Nguyen Duc Khoa - Frontend Developer"
+                      width={480}
+                      height={600}
+                      className="w-full h-full object-cover object-center transform -rotate-12 scale-105"
                     />
 
                     {/* Organic gradient overlay */}
