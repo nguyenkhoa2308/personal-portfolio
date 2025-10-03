@@ -256,10 +256,10 @@ export function ProjectsSection() {
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                 }
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-                className="group h-full"
+                className="group h-full select-none"
                 onDoubleClick={() => setSelectedProject(index)}
               >
-                <div className="overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 h-full flex flex-col cursor-pointer">
+                <div className="overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 h-full flex flex-col cursor-pointer">
                   <div className="relative overflow-hidden">
                     <Image
                       width={400}
@@ -318,14 +318,15 @@ export function ProjectsSection() {
                       ))}
                     </div>
 
-                    <motion.div
-                      whileHover={{ x: 5 }}
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                       onClick={() => setSelectedProject(index)}
-                      className="flex items-center text-primary cursor-pointer group-hover:text-primary/80 transition-colors duration-300"
+                      className="px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-2"
                     >
                       View Details
-                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                    </motion.div>
+                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>
@@ -352,7 +353,6 @@ export function ProjectsSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
               className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 gap-4"
               onClick={() => setSelectedProject(null)}
             >
@@ -361,7 +361,6 @@ export function ProjectsSection() {
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -100, opacity: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
                 className="hidden lg:flex flex-col w-[550px] bg-card border border-border rounded-lg p-6 max-h-[90vh] flex-shrink-0"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -547,7 +546,6 @@ export function ProjectsSection() {
                 initial={{ scale: 0.8, opacity: 0, y: 50 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.8, opacity: 0, y: 50 }}
-                transition={{ duration: 0.3, type: "spring", damping: 25 }}
                 className="bg-card border border-border max-w-2xl w-full max-h-[90vh] rounded-lg overflow-hidden flex flex-col"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -725,7 +723,6 @@ export function ProjectsSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
             className="fixed inset-0 bg-black/95 z-[9999] flex flex-col items-center justify-center p-4 gap-4"
             onClick={() => setSelectedImage(null)}
             style={{ margin: 0 }}
